@@ -16,5 +16,5 @@ public interface PersonneService {
 	List<AgeDistributionEntry> getAgePersonne();
 	List<AgeDistributionEntry> calculateAgeDistribution();
 	List<InscriptionDistribution> calculateInscriptionDistribution();
-	Personne AjouterPersonne(Personne p, Long idCat);
+	Personne AjouterPersonne(Personne p);
 }

@@ -34,9 +34,7 @@ public class PersonneServiceImpl implements PersonneService {
 	//public Personne AjouterPersonne(Personne p) {
 	//	return perRepository.save(p);
 //	}
-	public Personne AjouterPersonne(Personne p, Long idCat) {
-	    Categorie categorie = catRepository.findById(idCat).orElse(null);
-	    p.setCategorie(categorie);
+	public Personne AjouterPersonne(Personne p) {
 	    return perRepository.save(p);
 	}
 
