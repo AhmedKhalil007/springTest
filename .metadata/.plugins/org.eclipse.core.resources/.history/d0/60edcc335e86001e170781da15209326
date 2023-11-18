@@ -1,0 +1,16 @@
+package com.ahmed.personne.api;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "message"
+})
+public class ApiResponse {
+    @JsonProperty("message")
+    private String message;
+
+    // ... autres membres, constructeurs, getters, setters
+}

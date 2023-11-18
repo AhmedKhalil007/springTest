@@ -91,18 +91,21 @@ public class PersonneController {
 	
 	//return "ajouterPersonnes";
 	//}
-	  @PostMapping("/savePersonne")
-	    public ResponseEntity<String> savePersonne(@RequestBody Personne personne) {
-	        try {
-	            Personne savePersonne = personneService.AjouterPersonne(personne);
-	            String msg = "personne enregistrée avec l'ID " + savePersonne.getIdPersonne();
-	            return ResponseEntity.ok(msg);
-	        } catch (Exception e) {
-	            e.printStackTrace(); // Gérer l'exception de manière appropriée
-	            return ResponseEntity.status(500).body("Erreur lors de l'ajout de la personne");
-	        }
+	@PostMapping("/savePersonne" )
+	@ResponseBody
+
+	public ResponseEntity<ApiResponse> savePersonne(@RequestBody Personne personne) {
+	    try {
+	        Personne savePersonne = personneService.AjouterPersonne(personne);
+	        String msg = "personne enregistrée avec l'ID " + savePersonne.getIdPersonne();
+	        ApiResponse response = new ApiResponse(msg);
+	        return ResponseEntity.ok(response);
+	    } catch (Exception e) {
+	        e.printStackTrace(); // Gérer l'exception de manière appropriée
+	        ApiResponse response = new ApiResponse("Erreur lors de l'ajout de la personne");
+	        return ResponseEntity.status(500).body(response);
 	    }
-	
+	}
 	@GetMapping("/categories")
 	@ResponseBody
 	public List<Categorie> getAllCategories() {
