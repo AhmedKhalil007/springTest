@@ -114,11 +114,13 @@ public class PersonneController {
 	}
 	
 	
-	 @GetMapping("/listePersonne")
-	    public ResponseEntity<List<Personne>> getAllPersonnes() {
-	        List<Personne> personnes = personneService.getAllPersonnes();
-	        return new ResponseEntity<>(personnes, HttpStatus.OK);
-	    }
+	@GetMapping ("/listePersonne")
+	public String listePersonnes(ModelMap modelMap )
+	{
+	List<Personne> per = personneService.getAllPersonnes();
+	modelMap.addAttribute("personne", per);
+	return "listePersonne";
+	}
 	
 	//@DeleteMapping("/deletePersonne")
 	 // public String deletePersonne(@RequestParam(value = "idPersonne") Long idPersonne,ModelMap modelMap) throws ParseException

@@ -114,11 +114,13 @@ public class PersonneController {
 	}
 	
 	
-	 @GetMapping("/listePersonne")
-	    public ResponseEntity<List<Personne>> getAllPersonnes() {
-	        List<Personne> personnes = personneService.getAllPersonnes();
-	        return new ResponseEntity<>(personnes, HttpStatus.OK);
-	    }
+	@GetMapping ("/listePersonne")
+	public String listePersonnes(ModelMap modelMap )
+	{
+	List<Personne> per = personneService.getAllPersonnes();
+	modelMap.addAttribute("personne", per);
+	return "listePersonne";
+	}
 	
 	//@DeleteMapping("/deletePersonne")
 	 // public String deletePersonne(@RequestParam(value = "idPersonne") Long idPersonne,ModelMap modelMap) throws ParseException
@@ -165,7 +167,7 @@ public class PersonneController {
             return ResponseEntity.status(500).body("Erreur lors de mise à jour de la personne");
         }
 	}
-	 @DeleteMapping("/deletePersonne/{id}")
+	 @DeleteMapping("/deletePersonne")
 	    public ResponseEntity<String> deletePersonne(@PathVariable Long id) {
 	        try {
 	            personneService.deletePersonneById(id);
