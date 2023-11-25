@@ -193,17 +193,17 @@ public class PersonneController {
 	
 	
 	
-	 @GetMapping("/graph")
-	 public ResponseEntity<List<AgeDistributionEntry>> getAgeDistribution() {
-	     List<AgeDistributionEntry> ageDistributions = personneService.calculateAgeDistribution();
-	     return ResponseEntity.ok(ageDistributions);
-	 }
+	@GetMapping("/graph")
+	public ResponseEntity<List<AgeDistributionEntry>> getAgeDistribution() {
+	    List<AgeDistributionEntry> ageDistributions = personneService.calculateAgeDistribution();
+	    return ResponseEntity.ok(ageDistributions);
+	}
 	
-	//@RequestMapping("/graph")
-	//public String graph()
-	//{
-	//return "ageDistribution";
-	//}
+	@RequestMapping("/graph")
+	public String graph()
+	{
+		return "ageDistribution";
+	}
 	
 	
 	@GetMapping("/inscriptionDistributions")

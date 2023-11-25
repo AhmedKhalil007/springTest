@@ -194,15 +194,22 @@ public class PersonneController {
 	
 	
 	 @GetMapping("/graph")
-	 public ResponseEntity<List<AgeDistributionEntry>> getAgeDistribution() {
-	     List<AgeDistributionEntry> ageDistributions = personneService.calculateAgeDistribution();
-	     return ResponseEntity.ok(ageDistributions);
+	 public ResponseEntity<String> getAgeDistribution() {
+	     try {
+	         List<AgeDistributionEntry> ageDistributions = personneService.calculateAgeDistribution();
+	         // Transformez les données en format texte personnalisé selon vos besoins
+	         String result = "Le calcul de la distribution des âges a réussi. Nombre total de distributions : " + ageDistributions.size();
+	         return ResponseEntity.ok(result);
+	     } catch (Exception e) {
+	         e.printStackTrace(); // Gérer l'exception de manière appropriée
+	         return ResponseEntity.status(500).body("Erreur lors du calcul de la distribution des âges");
+	     }
 	 }
 	
 	//@RequestMapping("/graph")
 	//public String graph()
 	//{
-	//return "ageDistribution";
+		//return "ageDistribution";
 	//}
 	
 	
