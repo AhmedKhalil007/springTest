@@ -3015,3 +3015,21 @@ java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Pro
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-19 09:12:41.781
 !MESSAGE executing callback sts4.classpath.ocgLCGxi SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-12-19 09:25:19.111
+!MESSAGE The POM for org.springframework.boot:spring-boot-maven-plugin:jar:3.10.2 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-12-19 09:25:19.286
+!MESSAGE The POM for org.springframework.boot:spring-boot-maven-plugin:jar:3.10.2 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-12-19 09:25:19.308
+!MESSAGE The POM for org.springframework.boot:spring-boot-maven-plugin:jar:3.10.2 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-12-19 11:04:59.989
+!MESSAGE The POM for org.apache.maven.plugins:maven-compiler-plugin:jar:3.10.2 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-12-19 11:04:59.998
+!MESSAGE The POM for org.apache.maven.plugins:maven-compiler-plugin:jar:3.10.2 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-12-19 11:05:00.324
+!MESSAGE The POM for org.apache.maven.plugins:maven-compiler-plugin:jar:3.10.2 is missing, no dependency information available
